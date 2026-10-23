@@ -1,178 +1,1012 @@
+
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Responsive full-width website template">
-  <meta name="theme-color" content="#111827">
-  <title>My Website</title>
+
+  <title>Thambi Photography | Photography Services in Mumbai</title>
+  <meta name="description" content="Contact Thambi Photography in Vile Parle East, Mumbai, for photography services and inquiries. Call or WhatsApp us for more details.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#6d28d9">
+
+  <link rel="canonical" href="https://example.com/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
   <style>
     :root {
-      --bg: #f8fafc;
-      --surface: #ffffff;
-      --text: #111827;
-      --muted: #64748b;
-      --accent: #d97706;
-      --accent-dark: #92400e;
-      --border: #e2e8f0;
-      --content-width: 1200px;
+      --purple: #6d28d9;
+      --dark-purple: #351064;
+      --light-purple: #f4edff;
+      --accent: #a78bfa;
+      --text: #241b35;
+      --muted: #6d6478;
+      --white: #ffffff;
+      --border: #e9e0f4;
+      --shadow: 0 12px 40px rgba(68, 31, 113, .10);
     }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; width: 100%; }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; scroll-padding-top: 85px; }
+
     body {
-      margin: 0;
-      width: 100%;
-      min-width: 0;
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: 'DM Sans', sans-serif;
       color: var(--text);
-      background: var(--bg);
-      line-height: 1.6;
-      overflow-wrap: anywhere;
+      line-height: 1.7;
+      background: var(--white);
     }
-    img, video, iframe, svg { max-width: 100%; }
-    img { height: auto; }
-    a { color: inherit; }
-    .site-header {
-      width: 100%;
-      background: #111827;
-      color: white;
+
+    a { text-decoration: none; color: inherit; }
+
+    button, a { -webkit-tap-highlight-color: transparent; }
+
+    .container {
+      width: min(1120px, 90%);
+      margin: auto;
     }
-    .header-inner {
-      width: min(100%, var(--content-width));
-      margin: 0 auto;
-      padding: 14px 20px;
+
+    header {
+      background: rgba(255,255,255,.97);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .navbar {
+      min-height: 76px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 16px;
+      gap: 20px;
     }
-    .brand { margin: 0; font-size: clamp(1.2rem, 2.6vw, 1.8rem); line-height: 1.2; }
-    .brand a { text-decoration: none; }
-    .nav { display: flex; flex-wrap: wrap; gap: 8px 18px; align-items: center; }
-    .nav a { text-decoration: none; color: #f8fafc; font-size: .95rem; }
-    .nav a:hover { color: #fbbf24; }
+
+    .logo {
+      font-size: 21px;
+      font-weight: 700;
+      color: var(--dark-purple);
+      white-space: nowrap;
+    }
+
+    .logo span { color: var(--purple); }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 23px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    nav a:hover, .footer-links a:hover { color: var(--accent); }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 13px 22px;
+      border-radius: 9px;
+      font-size: 15px;
+      font-weight: 700;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: .2s ease;
+      text-align: center;
+    }
+
+    .btn-primary {
+      color: white;
+      background: var(--purple);
+    }
+
+    .btn-primary:hover {
+      background: var(--dark-purple);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      border-color: var(--purple);
+      color: var(--purple);
+      background: white;
+    }
+
+    .btn-outline:hover { background: var(--light-purple); }
+
+    .btn-whatsapp { background: #168b50; color: white; }
+    .btn-whatsapp:hover { background: #116b3d; }
+
     .hero {
-      width: 100%;
-      min-height: 300px;
+      padding: 95px 0 90px;
+      background:
+        radial-gradient(ellipse at 85% 15%, #e6d5ff 0, transparent 38%),
+        linear-gradient(135deg, #faf7ff 0%, #f1e8ff 100%);
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      align-items: center;
+      gap: 55px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 7px 14px;
+      border-radius: 30px;
+      background: #e9dcff;
+      color: var(--dark-purple);
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 22px;
+    }
+
+    h1, h2, h3 { line-height: 1.2; }
+
+    h1, h2 {
+      font-family: 'Playfair Display', serif;
+    }
+
+    h1 {
+      font-size: clamp(39px, 5vw, 62px);
+      letter-spacing: -1.4px;
+      color: var(--dark-purple);
+      margin-bottom: 22px;
+    }
+
+    h1 span { color: var(--purple); }
+
+    .hero p {
+      font-size: 17px;
+      color: var(--muted);
+      max-width: 560px;
+      margin-bottom: 27px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+    }
+
+    .hero-note {
+      font-size: 12px !important;
+      margin-top: 18px;
+      margin-bottom: 0 !important;
+    }
+
+    .hero-art {
+      min-height: 355px;
+      padding: 35px;
+      border-radius: 25px;
+      background: linear-gradient(145deg, #4c1d95, #8b5cf6);
+      box-shadow: 0 25px 60px rgba(76,29,149,.23);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-art::before {
+      content: "";
+      position: absolute;
+      width: 230px;
+      height: 230px;
+      border: 1px solid rgba(255,255,255,.30);
+      border-radius: 50%;
+      top: -55px;
+      right: -45px;
+      box-shadow: 0 0 0 25px rgba(255,255,255,.06),
+                  0 0 0 55px rgba(255,255,255,.04);
+    }
+
+    .camera-icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -65%);
+      font-size: 105px;
+      filter: drop-shadow(0 10px 15px rgba(0,0,0,.15));
+    }
+
+    .hero-art h2 {
+      font-size: 30px;
+      position: relative;
+      margin-bottom: 9px;
+    }
+
+    .hero-art p {
+      color: #eee5ff;
+      font-size: 15px;
+      margin-bottom: 0;
+      position: relative;
+    }
+
+    section { padding: 82px 0; }
+
+    .section-heading {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 42px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(30px, 4vw, 42px);
+      color: var(--dark-purple);
+      margin-bottom: 15px;
+    }
+
+    .section-heading p { color: var(--muted); }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .service-card {
+      padding: 29px 25px;
+      border: 1px solid var(--border);
+      border-radius: 15px;
+      background: white;
+      box-shadow: 0 5px 22px rgba(60,30,100,.035);
+      transition: .2s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+      border-color: #c4a7fa;
+    }
+
+    .service-icon {
+      width: 53px;
+      height: 53px;
       display: grid;
       place-items: center;
-      padding: clamp(36px, 7vw, 84px) 20px;
-      text-align: center;
+      border-radius: 13px;
+      background: var(--light-purple);
+      font-size: 25px;
+      margin-bottom: 20px;
+    }
+
+    .service-card h3 {
+      font-size: 19px;
+      margin-bottom: 12px;
+      color: var(--dark-purple);
+    }
+
+    .service-card p { font-size: 14px; color: var(--muted); }
+
+    .about { background: #faf8ff; }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      align-items: center;
+      gap: 60px;
+    }
+
+    .about-art {
+      min-height: 330px;
+      border-radius: 22px;
+      background: linear-gradient(145deg, #ddd0ff, #f5edff);
+      display: grid;
+      place-items: center;
+      font-size: 100px;
+    }
+
+    .about-copy h2 {
+      font-size: clamp(30px, 4vw, 42px);
+      color: var(--dark-purple);
+      margin-bottom: 20px;
+    }
+
+    .about-copy p {
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+
+    .about-copy .btn { margin-top: 10px; }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 35px;
+      align-items: stretch;
+    }
+
+    .contact-info {
+      padding: 32px;
+      border-radius: 18px;
+      background: var(--dark-purple);
       color: white;
-      background: linear-gradient(135deg, #111827, #374151 60%, #92400e);
     }
-    .hero-inner { width: min(100%, 900px); }
-    .hero h2 { margin: 0 0 12px; font-size: clamp(2rem, 5vw, 3.5rem); line-height: 1.12; }
-    .hero p { margin: 0 auto 22px; max-width: 680px; color: #e5e7eb; font-size: clamp(1rem, 2vw, 1.2rem); }
-    .button {
-      display: inline-block; padding: 11px 18px; border-radius: 8px;
-      background: var(--accent); color: #fff; text-decoration: none; font-weight: 700;
+
+    .contact-info h3 {
+      font-size: 25px;
+      margin-bottom: 13px;
     }
-    .button:hover { background: var(--accent-dark); }
-    main { width: 100%; }
-    .section {
-      width: min(100%, var(--content-width));
-      margin: 0 auto;
-      padding: clamp(28px, 5vw, 56px) 20px;
+
+    .contact-info > p {
+      color: #e4d7fa;
+      font-size: 14px;
+      margin-bottom: 27px;
     }
-    .section h2 { margin: 0 0 12px; font-size: clamp(1.5rem, 3vw, 2.2rem); line-height: 1.25; }
-    .section-intro { margin: 0 0 24px; color: var(--muted); max-width: 760px; }
-    .cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
-    .card {
-      min-width: 0; padding: 22px; border: 1px solid var(--border);
-      border-radius: 14px; background: var(--surface);
+
+    .contact-item { margin-bottom: 23px; }
+
+    .contact-item strong {
+      display: block;
+      font-size: 13px;
+      color: #cbb4ff;
+      margin-bottom: 5px;
     }
-    .card h3 { margin: 0 0 8px; font-size: 1.15rem; }
-    .card p { margin: 0; color: var(--muted); }
-    .about { background: #fff; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-    .contact-box { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px; }
-    .site-footer { width: 100%; background: #111827; color: #e5e7eb; }
-    .footer-inner {
-      width: min(100%, var(--content-width)); margin: 0 auto;
-      padding: 24px 20px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px;
+
+    .contact-item a, .contact-item address {
+      font-size: 14px;
+      overflow-wrap: anywhere;
+      font-style: normal;
     }
-    .footer-inner p { margin: 0; }
-    @media (max-width: 760px) {
-      .header-inner { align-items: flex-start; flex-direction: column; padding: 14px 16px; }
-      .nav { width: 100%; gap: 10px 16px; }
-      .nav a { font-size: .92rem; }
-      .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .section { padding-left: 16px; padding-right: 16px; }
-      .hero { min-height: 260px; }
+
+    .contact-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 25px;
     }
-    @media (max-width: 480px) {
-      .cards { grid-template-columns: minmax(0, 1fr); }
-      .card { padding: 18px; }
-      .hero { padding-left: 16px; padding-right: 16px; }
-      .footer-inner { flex-direction: column; }
+
+    .contact-panel {
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 32px;
+    }
+
+    .contact-panel h3 {
+      color: var(--dark-purple);
+      font-size: 24px;
+      margin-bottom: 12px;
+    }
+
+    .contact-panel p {
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+
+    .contact-panel .btn { width: 100%; margin-top: 10px; }
+
+    .policies { background: #faf8ff; }
+
+    .policy-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .policy-card {
+      background: white;
+      padding: 26px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      scroll-margin-top: 95px;
+    }
+
+    .policy-card h3 {
+      color: var(--dark-purple);
+      font-size: 20px;
+      margin-bottom: 14px;
+    }
+
+    .policy-card p, .policy-card li {
+      color: var(--muted);
+      font-size: 13px;
+      overflow-wrap: anywhere;
+    }
+
+    .policy-card p + p { margin-top: 12px; }
+    .policy-card ul { padding-left: 20px; }
+    .policy-card li { margin-bottom: 8px; }
+
+    .cta {
+      text-align: center;
+      background: linear-gradient(135deg, #4c1d95, #7c3aed);
+      color: white;
+      padding: 65px 0;
+    }
+
+    .cta h2 { font-size: clamp(29px, 4vw, 40px); margin-bottom: 15px; }
+    .cta p { color: #eee5ff; margin-bottom: 25px; }
+
+    footer {
+      padding: 36px 0;
+      background: #211033;
+      color: #e7ddf5;
+    }
+
+    .footer-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 25px;
+      flex-wrap: wrap;
+      padding-bottom: 25px;
+      border-bottom: 1px solid #4b365e;
+    }
+
+    .footer-brand { max-width: 360px; }
+    .footer-brand h3 { font-size: 21px; margin-bottom: 10px; color: white; }
+    .footer-brand p { font-size: 13px; color: #c8b9d8; }
+
+    .footer-links {
+      display: flex;
+      gap: 17px;
+      flex-wrap: wrap;
+      font-size: 13px;
+    }
+
+    .copyright {
+      padding-top: 22px;
+      font-size: 12px;
+      color: #c8b9d8;
+      text-align: center;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      z-index: 90;
+      background: #168b50;
+      color: white;
+      border-radius: 50px;
+      padding: 13px 18px;
+      font-size: 14px;
+      font-weight: 700;
+      box-shadow: 0 5px 20px rgba(0,0,0,.18);
+    }
+
+    .whatsapp-float:hover { background: #116b3d; }
+
+    @media (max-width: 850px) {
+      .navbar { padding: 15px 0; align-items: flex-start; flex-wrap: wrap; }
+      nav { order: 3; width: 100%; gap: 15px; overflow-x: auto; padding: 6px 0; }
+      .nav-cta { margin-left: auto; }
+      .hero { padding: 65px 0; }
+      .hero-grid, .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 30px; }
+      .hero-art { min-height: 300px; }
+      .about-art { min-height: 230px; }
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .about-grid { gap: 25px; }
+    }
+
+    @media (max-width: 540px) {
+      .container { width: 92%; }
+      .logo { font-size: 18px; }
+      .navbar { gap: 12px; }
+      nav { font-size: 13px; gap: 17px; }
+      .nav-cta { padding: 10px 12px; font-size: 12px; }
+      .hero { padding: 48px 0; }
+      h1 { font-size: 39px; }
+      .hero p { font-size: 15px; }
+      .hero-buttons { flex-direction: column; }
+      .hero-buttons .btn { width: 100%; }
+      .hero-art { min-height: 275px; padding: 24px; }
+      .camera-icon { font-size: 82px; }
+      section { padding: 58px 0; }
+      .services-grid, .policy-list { grid-template-columns: 1fr; }
+      .service-card { padding: 24px; }
+      .contact-info, .contact-panel { padding: 24px; }
+      .footer-top { flex-direction: column; }
+      .whatsapp-float { right: 12px; bottom: 12px; padding: 12px 15px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
+      }
     }
   </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Thambi Photography",
+    "telephone": "+91-9266743539",
+    "email": "thambiphotography@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "JW Cafe, Chhatrapati Shivaji International Airport Area, Navpada, Vile Parle East, Vile Parle",
+      "addressLocality": "Mumbai",
+      "addressRegion": "Maharashtra",
+      "postalCode": "400099",
+      "addressCountry": "IN"
+    }
+  }
+  </script>
 </head>
+
 <body>
-  <header class="site-header">
-    <div class="header-inner">
-      <h1 class="brand"><a href="#">My Website</a></h1>
-      <nav class="nav" aria-label="Main navigation">
+  <header>
+    <div class="container navbar">
+      <a href="#home" class="logo">Thambi <span>Photography</span></a>
+
+      <nav aria-label="Main navigation">
         <a href="#home">Home</a>
-        <a href="#about">About Us</a>
         <a href="#services">Services</a>
-        <a href="#contact">Contact</a>
+        <a href="#about">About Us</a>
+        <a href="#contact">Contact Us</a>
+        <a href="#privacy">Privacy</a>
       </nav>
+
+      <a class="btn btn-primary nav-cta"
+         href="https://wa.me/919266743539?text=I%20want%20more%20details"
+         target="_blank" rel="noopener noreferrer">
+        WhatsApp Us
+      </a>
     </div>
   </header>
 
   <main>
+    <!-- HERO SECTION -->
     <section class="hero" id="home">
-      <div class="hero-inner">
-        <h2>Welcome to My Website</h2>
-        <p>A clean, full-width and mobile-responsive website template. Replace this text with your own business details.</p>
-        <a class="button" href="#contact">Contact Us</a>
-      </div>
-    </section>
-
-    <section class="section" id="services">
-      <h2>Our Services</h2>
-      <p class="section-intro">Add your services here. The layout adjusts automatically for mobile, tablet and desktop screens.</p>
-      <div class="cards">
-        <article class="card">
-          <h3>Service One</h3>
-          <p>Write a short description of your first service here.</p>
-        </article>
-        <article class="card">
-          <h3>Service Two</h3>
-          <p>Write a short description of your second service here.</p>
-        </article>
-        <article class="card">
-          <h3>Service Three</h3>
-          <p>Write a short description of your third service here.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="about" id="about">
-      <div class="section">
-        <h2>About Us</h2>
-        <p class="section-intro">Add your business introduction here. Keep your content, images and links relevant to your website.</p>
-      </div>
-    </section>
-
-    <section class="section" id="contact">
-      <div class="contact-box">
+      <div class="container hero-grid">
         <div>
-          <h2>Contact Us</h2>
-          <p class="section-intro">Add your phone number, email address or contact link here.</p>
+          <span class="eyebrow">THAMBI PHOTOGRAPHY · MUMBAI</span>
+
+          <h1>Every Moment Has a <span>Story</span></h1>
+
+          <p>
+            Welcome to Thambi Photography. Get in touch with us to learn
+            more about our photography services, discuss your requirements,
+            and make an inquiry.
+          </p>
+
+          <div class="hero-buttons">
+            <a class="btn btn-whatsapp"
+               href="https://wa.me/919266743539?text=I%20want%20more%20details"
+               target="_blank" rel="noopener noreferrer">
+              ☎ WhatsApp Inquiry
+            </a>
+
+            <a class="btn btn-outline" href="#services">
+              Explore Services
+            </a>
+          </div>
+
+          <p class="hero-note">
+            Contact us directly for service information and availability.
+          </p>
         </div>
-        <a class="button" href="mailto:hello@example.com">Email Us</a>
+
+        <div class="hero-art" aria-label="Photography themed illustration">
+          <div class="camera-icon" aria-hidden="true">📸</div>
+          <h2>Thambi Photography</h2>
+          <p>Photography services · Mumbai, Maharashtra</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section id="services">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Our Services</h2>
+          <p>
+            Explore our photography service categories. Contact us to confirm
+            which services are available for your requirements.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true">📷</div>
+            <h3>Event Photography</h3>
+            <p>
+              Photography inquiries for events and special occasions.
+              Contact us to discuss your event requirements.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true">👤</div>
+            <h3>Portrait Photography</h3>
+            <p>
+              Discuss portrait photography options, session details,
+              and your preferred photography style.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true">💍</div>
+            <h3>Wedding Photography</h3>
+            <p>
+              Ask us about photography requirements for weddings
+              and related celebrations.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true">🎉</div>
+            <h3>Birthday Photography</h3>
+            <p>
+              Get in touch to discuss photography needs for birthdays
+              and family celebrations.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true">🏢</div>
+            <h3>Commercial Photography</h3>
+            <p>
+              Enquire about photography for business, products,
+              and other commercial requirements.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true">✨</div>
+            <h3>Custom Photography</h3>
+            <p>
+              Have a different photography requirement? Share your
+              needs with us for further information.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT US -->
+    <section class="about" id="about">
+      <div class="container about-grid">
+        <div class="about-art" aria-hidden="true">📸</div>
+
+        <div class="about-copy">
+          <span class="eyebrow">ABOUT US</span>
+          <h2>Get to Know Thambi Photography</h2>
+
+          <p>
+            Thambi Photography is a photography business based at the
+            Vile Parle East area of Mumbai, Maharashtra.
+          </p>
+
+          <p>
+            We welcome inquiries from individuals and businesses looking
+            for photography services. Our team can discuss your requirements,
+            preferred dates, service details, and availability directly.
+          </p>
+
+          <p>
+            For accurate information about pricing, packages, and the
+            services currently offered, please contact us by phone or WhatsApp.
+          </p>
+
+          <a class="btn btn-primary"
+             href="https://wa.me/919266743539?text=I%20want%20more%20details"
+             target="_blank" rel="noopener noreferrer">
+            I Want More Details
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT US -->
+    <section id="contact">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Contact Us</h2>
+          <p>
+            Have a question or need more information? Contact Thambi
+            Photography using the details below.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-info">
+            <h3>Let's Talk</h3>
+            <p>We welcome genuine inquiries about our photography services.</p>
+
+            <div class="contact-item">
+              <strong>Phone Number</strong>
+              <a href="tel:+919266743539">+91 9266743539</a>
+            </div>
+
+            <div class="contact-item">
+              <strong>Email Address</strong>
+              <a href="mailto:thambiphotography@gmail.com">
+                thambiphotography@gmail.com
+              </a>
+            </div>
+
+            <div class="contact-item">
+              <strong>Business Address</strong>
+              <address>
+                JW Cafe, Chhatrapati Shivaji International Airport Area,
+                Navpada, Vile Parle East, Vile Parle, Mumbai,
+                Maharashtra 400099, India
+              </address>
+            </div>
+
+            <div class="contact-actions">
+              <a class="btn btn-whatsapp"
+                 href="https://wa.me/919266743539?text=I%20want%20more%20details"
+                 target="_blank" rel="noopener noreferrer">
+                WhatsApp
+              </a>
+
+              <a class="btn btn-outline"
+                 style="background:white"
+                 href="tel:+919266743539">
+                Call Now
+              </a>
+            </div>
+          </div>
+
+          <div class="contact-panel">
+            <h3>Photography Inquiry</h3>
+            <p>
+              To enquire about services, dates, availability, or pricing,
+              contact us directly. Your WhatsApp message will be prefilled
+              with “I want more details”.
+            </p>
+
+            <a class="btn btn-whatsapp"
+               href="https://wa.me/919266743539?text=I%20want%20more%20details"
+               target="_blank" rel="noopener noreferrer">
+              I Want More Details
+            </a>
+
+            <a class="btn btn-outline" href="mailto:thambiphotography@gmail.com">
+              Send an Email
+            </a>
+
+            <a class="btn btn-outline" href="tel:+919266743539">
+              Call Thambi Photography
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- POLICIES -->
+    <section class="policies" id="policies">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Policies & Legal Information</h2>
+          <p>
+            Please review our privacy practices, website terms,
+            and disclaimer before using this website.
+          </p>
+        </div>
+
+        <div class="policy-list">
+          <article class="policy-card" id="privacy">
+            <h3>Privacy Policy</h3>
+
+            <p><strong>Last updated:</strong> October 23, 2026</p>
+
+            <p>
+              Thambi Photography respects your privacy. This website provides
+              business information and contact options for photography inquiries.
+            </p>
+
+            <p><strong>Information you provide</strong></p>
+            <p>
+              If you contact us by phone, email, or WhatsApp, we may receive
+              the information you choose to share, such as your name,
+              contact details, event requirements, and message.
+            </p>
+
+            <p><strong>How information is used</strong></p>
+            <p>
+              Information you provide may be used to respond to inquiries,
+              discuss requested services, communicate with you, and handle
+              relevant business requests.
+            </p>
+
+            <p><strong>Third-party services</strong></p>
+            <p>
+              WhatsApp, your email provider, and your telephone service may
+              process information under their own privacy policies. When you
+              follow an external link, that provider's terms and privacy
+              practices apply.
+            </p>
+
+            <p><strong>Cookies and analytics</strong></p>
+            <p>
+              This HTML template does not intentionally install analytics
+              scripts or advertising tracking cookies. Hosting providers,
+              embedded third-party services, or future integrations may
+              process technical data. Update this notice if you add such tools.
+            </p>
+
+            <p><strong>Data security and requests</strong></p>
+            <p>
+              We take reasonable steps to handle inquiry information
+              appropriately. To ask about information you have shared,
+              contact us at thambiphotography@gmail.com.
+            </p>
+
+            <p>
+              Contact: thambiphotography@gmail.com |
+              +91 9266743539
+            </p>
+          </article>
+
+          <article class="policy-card" id="terms">
+            <h3>Terms & Conditions</h3>
+
+            <p><strong>Last updated:</strong> October 23, 2026</p>
+
+            <p>
+              By accessing this website, you agree to use it lawfully and
+              not to misuse its content, contact facilities, or services.
+            </p>
+
+            <p><strong>Service inquiries</strong></p>
+            <p>
+              Information on this website is provided to help visitors
+              enquire about photography services. Specific services,
+              prices, schedules, packages, and availability must be
+              confirmed directly with Thambi Photography.
+            </p>
+
+            <p><strong>Bookings and payments</strong></p>
+            <p>
+              Sending an inquiry does not constitute a confirmed booking.
+              Any booking, payment, cancellation, refund, delivery, or
+              rescheduling arrangements must be agreed separately with
+              the business before a service is confirmed.
+            </p>
+
+            <p><strong>Website content</strong></p>
+            <p>
+              Website text and design are provided for general information.
+              You may not copy or misuse material belonging to others.
+              Third-party names and services remain the property of
+              their respective owners.
+            </p>
+
+            <p><strong>Changes</strong></p>
+            <p>
+              These terms may be updated when necessary. Continued use
+              of the website after an update is subject to applicable law.
+              Nothing in these terms excludes rights that cannot legally
+              be excluded.
+            </p>
+
+            <p>
+              Questions: thambiphotography@gmail.com
+            </p>
+          </article>
+
+          <article class="policy-card" id="disclaimer">
+            <h3>Disclaimer</h3>
+
+            <p><strong>Last updated:</strong> October 23, 2026</p>
+
+            <p>
+              The information on this website is provided for general
+              informational purposes and to facilitate photography inquiries.
+            </p>
+
+            <p>
+              Displayed service categories do not guarantee that a particular
+              service, date, package, or location is available. Please confirm
+              all relevant details directly before making arrangements.
+            </p>
+
+            <p>
+              We aim to keep the information accurate and up to date but do
+              not guarantee that every item is complete or current at all times.
+            </p>
+
+            <p>
+              External websites and third-party communication services are
+              operated independently. We are not responsible for their
+              separate content, policies, or availability.
+            </p>
+
+            <p>
+              Nothing in this disclaimer limits liability or consumer rights
+              where such a limitation is prohibited by applicable law.
+            </p>
+          </article>
+
+          <article class="policy-card" id="contact-policy">
+            <h3>Contact & Business Information</h3>
+
+            <p>
+              For service inquiries, privacy questions, or clarification
+              regarding these terms, please contact the business directly.
+            </p>
+
+            <ul>
+              <li><strong>Business:</strong> Thambi Photography</li>
+              <li><strong>Phone:</strong> +91 9266743539</li>
+              <li><strong>Email:</strong> thambiphotography@gmail.com</li>
+              <li>
+                <strong>Address:</strong> JW Cafe, Chhatrapati Shivaji
+                International Airport Area, Navpada, Vile Parle East,
+                Vile Parle, Mumbai, Maharashtra 400099, India
+              </li>
+            </ul>
+
+            <p>
+              Please contact us if any published business information
+              requires correction.
+            </p>
+
+            <a class="btn btn-primary"
+               href="mailto:thambiphotography@gmail.com">
+              Contact by Email
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="cta">
+      <div class="container">
+        <h2>Looking for Photography Services?</h2>
+        <p>Tell us what you need. Contact us for more information.</p>
+
+        <a class="btn btn-whatsapp"
+           href="https://wa.me/919266743539?text=I%20want%20more%20details"
+           target="_blank" rel="noopener noreferrer">
+          WhatsApp: I Want More Details
+        </a>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <p>© <span id="year"></span> My Website. All rights reserved.</p>
-      <p><a href="#about">About Us</a> · <a href="#contact">Contact</a></p>
+  <footer>
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <h3>Thambi Photography</h3>
+          <p>
+            Photography service inquiries in Vile Parle East, Mumbai,
+            Maharashtra. Contact us to discuss your requirements.
+          </p>
+        </div>
+
+        <div class="footer-links">
+          <a href="#home">Home</a>
+          <a href="#services">Services</a>
+          <a href="#about">About Us</a>
+          <a href="#contact">Contact Us</a>
+          <a href="#privacy">Privacy Policy</a>
+          <a href="#terms">Terms & Conditions</a>
+          <a href="#disclaimer">Disclaimer</a>
+        </div>
+      </div>
+
+      <div class="copyright">
+        © <span id="current-year">2026</span> Thambi Photography.
+        All rights reserved.
+      </div>
     </div>
   </footer>
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+
+  <a class="whatsapp-float"
+     href="https://wa.me/919266743539?text=I%20want%20more%20details"
+     target="_blank" rel="noopener noreferrer"
+     aria-label="Contact Thambi Photography on WhatsApp">
+    WhatsApp Inquiry
+  </a>
+
+  <script>
+    document.getElementById("current-year").textContent =
+      new Date().getFullYear();
+  </script>
 </body>
 </html>
